@@ -207,6 +207,14 @@ class OtpTextView : FrameLayout {
         }
     }
 
+    /**
+     * modified by amoronk
+     */
+    private fun clearOTP() {
+        otpChildEditText?.setText("")
+        itemViews?.forEach { it.setText("") }
+    }
+
     fun resetState() {
         otp?.let {
             setFocus(it.length)
