@@ -22,6 +22,28 @@
 <img src="screenshots/otp_view_4.gif" width="270" height="500" /> &nbsp;&nbsp;
 </p>
 
+## Recent Changes
+
+### OTP-related Functions (by amoronk)
+
+- Added `clearOTP()` function to clear OTP input fields
+- Added `clearFocusOTP()` function to clear focus from OTP input field
+- Introduced `resetView()` function to reset OTP view and state
+
+### Improvements to `setText` (by amoronk)
+
+- Updated the behavior of `setText` function when `hideOTP` is true:
+    - If the `value` parameter is not empty, set the background resource of `textView` to `R.drawable.bg_pin`.
+    - If the `value` parameter is empty, reset the background resource of `textView` to the default (no background).
+- Added a null check for `textView` before updating its text or background resource.
+
+### New Functions (by amoronk)
+
+- `clearOTP()`: Clears the OTP input fields by setting an empty string to the `otpChildEditText` and iterating over `itemViews` to clear their text.
+- `clearFocusOTP()`: Clears the focus from the OTP input field by calling `clearFocus()` on `otpChildEditText`.
+- `resetView()`: Resets the OTP view and state by calling `clearOTP()` to clear the input fields, and `resetState()` to bring the views back to their default state.
+
+Modified by: amoronk (April 10, 2024)
 
 ## Installation in your Project
 
