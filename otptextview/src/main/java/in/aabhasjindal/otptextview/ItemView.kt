@@ -114,17 +114,22 @@ class ItemView : FrameLayout {
         }
     }
 
+    /**
+     * modified by mo
+     */
     fun setText(value: String) {
         if (!hideOTP) {
             if (textView != null) {
                 textView?.text = value
             }
         } else {
-            textView?.text = ""
-            if (value == "") {
-                textView?.setBackgroundResource(defaultOTPDrawable)
-            } else {
-                textView?.setBackgroundResource(hideOTPDrawable)
+            if (textView != null) {
+                textView?.text = ""
+                if (value.isNotEmpty()) {
+                    textView?.setBackgroundResource(R.drawable.bg_pin)
+                } else {
+                    textView?.setBackgroundResource(0)
+                }
             }
         }
     }
